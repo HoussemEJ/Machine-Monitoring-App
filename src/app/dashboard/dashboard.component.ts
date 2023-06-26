@@ -14,6 +14,9 @@ export class DashboardComponent implements OnInit {
   data: string[][] = [];
   counter: number = 0;
   private subscription!: Subscription;
+  notificationCount = 0;
+  notifications: string[] = [];
+  showNotifications = false;
 
   constructor(private fileReaderService: FileReaderService, private router: Router) { }
 
@@ -36,6 +39,18 @@ export class DashboardComponent implements OnInit {
         console.error('Error reading files:', error);
       }
     });
+  }
+
+  toggleNotifications() {
+    this.showNotifications = !this.showNotifications;
+  }
+
+  addNotification(text: string) {
+    if (this.notifications.includes(text)){
+      return;
+    }
+    this.notifications.push(text);
+    this.notificationCount++;
   }
 
   navigateToDetails(event: MouseEvent): void {

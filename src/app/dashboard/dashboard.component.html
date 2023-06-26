@@ -1,4 +1,18 @@
-<h1>Dashboard</h1>
+<h1>Dashboard
+  <span class="bell-button" (click)="toggleNotifications()">
+    <span class="bell-icon">
+      <i class="fas fa-bell"></i>
+      <span class="notification-count">{{ notificationCount }}</span>
+    </span>
+    <div *ngIf="showNotifications" class="notification-list">
+      <ul>
+        <li *ngFor="let notification of notifications">
+          {{ notification }}
+        </li>
+      </ul>
+    </div>
+  </span>
+</h1>
 <table>
   <thead>
     <tr>
@@ -7,16 +21,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of filesData" [ngClass]="{'error': data.fileContent[0] === 'Error'}" (click)="navigateToDetails($event)">
+    <tr *ngFor="let data of filesData" [ngClass]="{'error': data.fileContent[0] === 'Error'}"
+      (click)="navigateToDetails($event)">
+      {{ data.fileContent[0] === 'Error' ? addNotification('Machine '+ data.fileName + ' requires immediate attention!') : '' }}
       <td class="machineName">{{ data.fileName }}</td>
       <td [ngClass]="{'error': data.fileContent[0]  === 'Error'}">{{ data.fileContent[0] }}</td>
-      <td>{{ data.fileContent[1]  }}</td>
-      <td>{{ data.fileContent[2]  }}</td>
+      <td>{{ data.fileContent[1] }}</td>
+      <td>{{ data.fileContent[2] }}</td>
       <td>{{ data.fileContent[3] }}</td>
-      <td>{{ data.fileContent[4]  }}</td>
-      <td>{{ data.fileContent[5]  }}</td>
-      <td>{{ data.fileContent[6]  }}</td>
-      <td>{{ data.fileContent[7]  }}</td>
+      <td>{{ data.fileContent[4] }}</td>
+      <td>{{ data.fileContent[5] }}</td>
+      <td>{{ data.fileContent[6] }}</td>
+      <td>{{ data.fileContent[7] }}</td>
     </tr>
   </tbody>
 </table>
