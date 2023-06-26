@@ -1,0 +1,62 @@
+h1 {
+    text-align: center;
+    color: #1A1A1A;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #1A1A1A;
+    color: #ffffff;
+    text-align: center;
+    /* cursor: pointer; */
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+table tbody tr {
+    border-bottom: thin solid #dddddd;
+    cursor: pointer;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #1A1A1A;
+}
+
+table tbody tr.active-row {
+    font-weight: bold;
+    color: #0e1220;
+}
+
+table tbody tr:hover {
+    background-color: #c7c7c7;
+}
+
+.machineName {
+    color: #0053c0;
+    font-weight: bold;
+}
+
+tr.error {
+    color: #ff0000b0;
+}
+
+td.error {
+    color: #ff0000;
+    font-weight: bold;
+}

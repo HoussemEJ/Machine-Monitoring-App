@@ -1,0 +1,22 @@
+<h1>Dashboard</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Machine</th>
+      <th *ngFor="let column of columns">{{ column }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of filesData" [ngClass]="{'error': data.fileContent[0] === 'Error'}">
+      <td class="machineName">{{ data.fileName }}</td>
+      <td [ngClass]="{'error': data.fileContent[0]  === 'Error'}">{{ data.fileContent[0] }}</td>
+      <td>{{ data.fileContent[1]  }}</td>
+      <td>{{ data.fileContent[2]  }}</td>
+      <td>{{ data.fileContent[3] }}</td>
+      <td>{{ data.fileContent[4]  }}</td>
+      <td>{{ data.fileContent[5]  }}</td>
+      <td>{{ data.fileContent[6]  }}</td>
+      <td>{{ data.fileContent[7]  }}</td>
+    </tr>
+  </tbody>
+</table>
