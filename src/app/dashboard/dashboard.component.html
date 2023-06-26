@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of filesData" [ngClass]="{'error': data.fileContent[0] === 'Error'}">
+    <tr *ngFor="let data of filesData" [ngClass]="{'error': data.fileContent[0] === 'Error'}" (click)="navigateToDetails($event)">
       <td class="machineName">{{ data.fileName }}</td>
       <td [ngClass]="{'error': data.fileContent[0]  === 'Error'}">{{ data.fileContent[0] }}</td>
       <td>{{ data.fileContent[1]  }}</td>

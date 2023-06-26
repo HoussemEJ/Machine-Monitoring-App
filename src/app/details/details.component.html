@@ -1,0 +1,36 @@
+<div class="flex-container">
+    <h1>{{ machine }}</h1>
+    <button (click)="goBack()">Go Back</button>
+</div>
+
+<div class="horizontal-list">
+    <ul>
+        <li><b>Status:</b>{{ data[0] }}</li>
+        <li><b>Job number:</b> {{ data[1] }}</li>
+        <li><b>Program:</b> {{ data[2] }}</li>
+        <li><b>Program status:</b> {{ data[3] }}</li>
+    </ul>
+  </div>
+<div class="cards">
+    <div class="card">
+        <h2>Load</h2>
+        <div class="circle" [style.background-image]="getHeatGradient(load)">
+            <div class="inner">{{ data[4] }}</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Power</h2>
+        <div class="circle" [style.background-image]="getHeatGradient(power)">
+            <div class="inner">{{ data[5] }}</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Temperature</h2>
+        <div class="circle" [style.background-image]="getHeatGradient(temperature)">
+            <div class="inner">{{ data[6] }}</div>
+        </div>
+    </div>
+</div>
+

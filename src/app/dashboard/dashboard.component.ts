@@ -37,4 +37,9 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+  navigateToDetails(event: MouseEvent): void {
+    const machine = (event.target as HTMLElement).closest('tr')?.querySelector('td:first-child')?.textContent ?? '';
+    this.router.navigateByUrl(`/details/${machine}`);
+  }
 }
