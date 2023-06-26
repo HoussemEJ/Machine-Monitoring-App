@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, map} from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class FileReaderService {
   counter: number = 0;
   private intervalId: any;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     const savedCounter = sessionStorage.getItem('counter');
     if (savedCounter) {
       this.counter = parseInt(savedCounter, 10);
@@ -39,7 +39,7 @@ export class FileReaderService {
 
   startCounter() {
     this.intervalId = setInterval(() => {
-      this.counter = this.counter > 999? 0: this.counter + 1;
+      this.counter = this.counter > 999 ? 0 : this.counter + 1;
       sessionStorage.setItem('counter', this.counter.toString());
     }, 1000);
   }

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription, interval } from 'rxjs';
-import { FileReaderService } from '../services/file-reader.service';
 import { Location } from '@angular/common';
+import { FileReaderService } from '../services/file-reader.service';
+import { Subscription, interval } from 'rxjs';
+
 
 @Component({
   selector: 'app-details',
@@ -27,7 +28,7 @@ export class DetailsComponent {
     this.retrieveFilesData();
 
     // Update every second
-    this.subscription = interval(1000).subscribe(() => {   
+    this.subscription = interval(1000).subscribe(() => {
       this.retrieveFilesData();
     });
   }
@@ -58,14 +59,14 @@ export class DetailsComponent {
     } else if (number > max) {
       number = max;
     }
-  
+
     // Normalize the number to a range between 0 and 100
     const range = max - min;
     const normalized = ((number - min) / range) * 100;
-  
+
     // Round the normalized value to the closest integer
     const rounded = Math.round(normalized);
-  
+
     return rounded;
   }
 

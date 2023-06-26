@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FileReaderService } from '../services/file-reader.service';
 import { interval, Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,7 @@ export class DashboardComponent implements OnInit {
     this.retrieveFilesData();
 
     // Update every second
-    this.subscription = interval(1000).subscribe(() => {   
+    this.subscription = interval(1000).subscribe(() => {
       this.retrieveFilesData();
     });
   }
@@ -46,7 +47,7 @@ export class DashboardComponent implements OnInit {
   }
 
   addNotification(text: string) {
-    if (this.notifications.includes(text)){
+    if (this.notifications.includes(text)) {
       return;
     }
     this.notifications.push(text);

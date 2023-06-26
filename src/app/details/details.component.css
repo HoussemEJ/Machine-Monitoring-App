@@ -1,28 +1,28 @@
 .flex-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .card {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 5px;
-    padding: 1rem;
-    margin: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .circle {
@@ -53,16 +53,16 @@ h2 {
 }
 
 .horizontal-list {
-    background-color: #d8d8d8;
-    list-style: none;
-    padding: .75rem;
-    margin: 0;
-    border-radius: 10px;
+  background-color: #d8d8d8;
+  list-style: none;
+  padding: .75rem;
+  margin: 0;
+  border-radius: 10px;
 }
-  
+
 .horizontal-list li {
-    display: inline;
-    margin-right: 3rem;
+  display: inline;
+  margin-right: 3rem;
 }
 
 button {
@@ -75,7 +75,7 @@ button {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
