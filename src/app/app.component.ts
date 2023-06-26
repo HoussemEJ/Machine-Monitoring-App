@@ -10,7 +10,9 @@ import { FileReaderService } from './services/file-reader.service';
 export class AppComponent implements OnInit {
   title = 'Machine-Monitoring';
 
-  constructor(private router: Router, public fileReaderService: FileReaderService) { }
+  constructor(private router: Router,
+              public fileReaderService: FileReaderService
+  ) { }
 
   ngOnInit() {
     this.fileReaderService.startCounter();

@@ -19,7 +19,9 @@ export class DashboardComponent implements OnInit {
   notifications: string[] = [];
   showNotifications = false;
 
-  constructor(private fileReaderService: FileReaderService, private router: Router) { }
+  constructor(private fileReaderService: FileReaderService,
+              private router: Router
+  ) { }
 
   ngOnInit() {
     // Initial run

@@ -10,12 +10,14 @@ export class FileReaderService {
   private intervalId: any;
 
   constructor(private http: HttpClient) {
+    // Prevents the read data from resetting when moving through pages
     const savedCounter = sessionStorage.getItem('counter');
     if (savedCounter) {
       this.counter = parseInt(savedCounter, 10);
     }
   }
 
+  // Read data from files (should be a realtime data reading from server instead)
   public readFiles(): Observable<{ fileName: string, fileContent: string[] }[]> {
     const fileUrls: string[] = [
       'assets/data/ST640.txt',
@@ -27,6 +29,7 @@ export class FileReaderService {
       'assets/data/ST530.txt'
     ];
 
+    // Retrieve 1 line from each file the line index is the current timer counter
     const fileRequests: Observable<{ fileName: string, fileContent: string[] }>[] = fileUrls.map(url => {
       const fileName = this.extractFileName(url);
       return this.http.get(url, { responseType: 'text' }).pipe(

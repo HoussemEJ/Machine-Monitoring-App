@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { FileReaderService } from '../services/file-reader.service';
 import { Subscription, interval } from 'rxjs';
@@ -18,7 +18,10 @@ export class DetailsComponent {
   power: number = 0;
   load: number = 0;
 
-  constructor(private fileReaderService: FileReaderService, private router: Router, private route: ActivatedRoute, private location: Location) {
+  constructor(private fileReaderService: FileReaderService, 
+              private route: ActivatedRoute, 
+              private location: Location
+  ) {
     this.machine = '';
   }
 
